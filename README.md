@@ -2,10 +2,10 @@
 Stock Predictor Using Sktime-dl 
 
 ## dataset
-reference : https://www.kaggle.com/medharawat/google-stock-price
-file directory : ./data
-* Google_Stock_Price_Test.csv
-* Google_Stock_Price_Train.csv
+* reference : https://www.kaggle.com/medharawat/google-stock-price
+* file directory : ./data
+  * Google_Stock_Price_Test.csv
+  * Google_Stock_Price_Train.csv
 
 ## environment setting
 ```bash
