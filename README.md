@@ -49,6 +49,6 @@ graph/
 ![Open_mlp](./images/Open_mlp.png)
 
 ## Reference
-[sktime](https://github.com/alan-turing-institute/sktime)
-[sktime-dl](https://github.com/sktime/sktime-dl)
-[sktime-dl example](https://github.com/sktime/sktime-dl/blob/master/examples/univariate_time_series_regression_and_forecasting.ipynb)
+* [sktime](https://github.com/alan-turing-institute/sktime)
+* [sktime-dl](https://github.com/sktime/sktime-dl)
+* [sktime-dl example](https://github.com/sktime/sktime-dl/blob/master/examples/univariate_time_series_regression_and_forecasting.ipynb)
