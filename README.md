@@ -15,6 +15,9 @@ pip install -r ./sktime-dl/build_tools/requirements.txt
 pip install tsfresh
 conda deactivate
 ```
+* origin setting : https://github.com/sktime/sktime-dl/blob/master/README.rst
+* it doesn't work
+* if [this problem](https://github.com/sktime/sktime-dl/issues/76) is solved, you will follow this.
 
 ## run
 ```bash
@@ -44,3 +47,8 @@ graph/
 ![High_mlp](./images/High_mlp.png)
 ![Low_mlp](./images/Low_mlp.png)
 ![Open_mlp](./images/Open_mlp.png)
+
+## Reference
+[sktime](https://github.com/alan-turing-institute/sktime)
+[sktime-dl](https://github.com/sktime/sktime-dl)
+[sktime-dl example](https://github.com/sktime/sktime-dl/blob/master/examples/univariate_time_series_regression_and_forecasting.ipynb)
