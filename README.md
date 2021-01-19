@@ -21,7 +21,9 @@ conda deactivate
 
 ## run
 ```bash
-python time_series_forecasting_for_sktime_dl.py
+python time_series_forecasting_for_sktime_dl.py \
+    -t './data/Google_Stock_Price_Train.csv' \
+    -v './data/Google_Stock_Price_Test.csv'
 ```
 
 ## result
