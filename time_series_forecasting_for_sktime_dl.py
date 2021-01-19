@@ -88,8 +88,14 @@ def DrawGraph(model_name:str, save_image_path, train, test, predict):
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(prog="StockPredictor",
+                                 description="StockPredictor", add_help=True)
+    parser.add_argument('-t', '--TRAIN', help='train data csv.', default='./data/Google_Stock_Price_Train.csv', required=False)
+    parser.add_argument('-v', '--VALIDATION', help='test data csv.', default='./data/Google_Stock_Price_Test.csv', required=False)
+    args = parser.parse_args()
+
     print('ReadTimeSeriesDataset() : data load!!')
-    train_data, test_data = ReadTimeSeriesDataset(Path('./data/Google_Stock_Price_Train.csv'), Path('./data/Google_Stock_Price_Test.csv'))
+    train_data, test_data = ReadTimeSeriesDataset(Path(args.TRAIN), Path(args.VALIDATION))
     algo_list = get_algo()
     path_dict = get_path_dict()
     window_length=10
