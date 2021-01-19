@@ -5,17 +5,11 @@
 # 
 # See [sktime](https://github.com/alan-turing-institute/sktime/blob/master/examples/forecasting.ipynb) for the same forecasting performed using time series algorithms.
 
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
-import seaborn as sns
 import pandas as pd
-
-from sklearn.metrics import mean_squared_error
-import json
 from pathlib import Path
-import datetime
 import argparse
 
 import sys
