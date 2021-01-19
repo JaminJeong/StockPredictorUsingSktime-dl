@@ -12,7 +12,7 @@ Stock Predictor Using Sktime-dl
 conda create -n sktime-dl python=3.6
 conda activate sktime-dl
 pip install -r ./sktime-dl/build_tools/requirements.txt 
-pip install tsfresh
+pip install tsfresh matplotlib pathlib
 conda deactivate
 ```
 * origin setting : https://github.com/sktime/sktime-dl/blob/master/README.rst
