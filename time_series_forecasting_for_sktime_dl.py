@@ -24,7 +24,12 @@ from sktime_dl.deeplearning import MLPRegressor, LSTMRegressor, ResNetRegressor
 from sktime_dl.deeplearning import CNNRegressor, InceptionTimeRegressor, EncoderRegressor
 from sktime_dl.deeplearning import TLENETRegressor, SimpleRNNRegressor, FCNRegressor
 
-def ReadTimeSeriesDataset(train_data_path:Path, test_data_path:Path):
+def ReadTimeSeriesDataset(train_data_path, test_data_path):
+    if type(train_data_path) == str:
+        train_data_path = Path(train_data_path)
+    if type(test_data_path) == str:
+        test_data_path = Path(test_data_path)
+
     train_data = None
     test_data = None
     if '.csv' in str(train_data_path):
@@ -96,6 +101,27 @@ if __name__ == "__main__":
 
     print('ReadTimeSeriesDataset() : data load!!')
     train_data, test_data = ReadTimeSeriesDataset(Path(args.TRAIN), Path(args.VALIDATION))
+
+    for idx, row in train_data.iterrows():
+        for column in train_data.columns:
+            if column == 'Date' or column == 'Volume':
+                continue
+            if type(row[column]) != float:
+                row[column] = str(row[column])
+                row[column] = row[column].replace(',', '')
+            row[column] = float(row[column])
+        train_data.iloc[idx] = row
+
+    for idx, row in test_data.iterrows():
+        for column in test_data.columns:
+            if column == 'Date' or column == 'Volume':
+                continue
+            if type(row[column]) != float:
+                row[column] = str(row[column])
+                row[column] = row[column].replace(',', '')
+            row[column] = float(row[column])
+        test_data.iloc[idx] = row
+
     algo_list = get_algo()
     path_dict = get_path_dict()
     window_length=10
@@ -105,14 +131,14 @@ if __name__ == "__main__":
         "model_save_directory": "./model",
         "batch_size":4096,
         "verbose":1,
-        # "nb_epochs":100,
+        # "nb_epochs":5, # default 2000
     }
 
     print('training start!!')
     for algo_name in algo_list:
         for key, value in train_data.items():
             # Close is excepted because of object type
-            if key == 'Date' or key == 'Volume' or key == 'Cloase':
+            if key == 'Date' or key == 'Volume' or key == 'Close':
                 continue
         
             train = value.copy()
