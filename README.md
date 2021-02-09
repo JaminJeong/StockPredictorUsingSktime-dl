@@ -50,6 +50,9 @@ graph/
 ![Low_resnet](./images/Low_resnet.png)
 ![Open_inception](./images/Open_inception.png )
 
+## Result
+- it don't work well ... 
+
 ## Reference
 * [sktime](https://github.com/alan-turing-institute/sktime)
 * [sktime-dl](https://github.com/sktime/sktime-dl)
