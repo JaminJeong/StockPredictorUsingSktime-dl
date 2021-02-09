@@ -46,9 +46,9 @@ graph/
 ```
 
 ## example images
-![High_mlp](./images/High_mlp.png)
-![Low_mlp](./images/Low_mlp.png)
-![Open_mlp](./images/Open_mlp.png)
+![High_lstm](./images/High_lstm.png)
+![Low_resnet](./images/Low_resnet.png)
+![Open_inception](./images/Open_inception.png )
 
 ## Reference
 * [sktime](https://github.com/alan-turing-institute/sktime)
